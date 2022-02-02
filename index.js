@@ -16,10 +16,16 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname, '/public/index.html');
 });
 
-// // GET request for notes
-// app.get('/api/notes', (req, res) => {
-//     res.json(`${res.method} request received to get a single note`);
-// });
+// GET request for notes
+app.get('/api/notes', (req, res) => {
+    // send message to client
+    res.json(`${res.method} request received to get a single note`);
+
+    // Log request to the terminal
+    console.info(`${req.method} request received to get notes`);
+});
+
+// GET request for a single note
 
 // POST request to add notes
 app.post('/api/notes', (req, res) => {
@@ -27,10 +33,10 @@ app.post('/api/notes', (req, res) => {
     console.info(`${res.method} request received to add a new note`);
 
     //create parameter to store notes
-    const notes = req.body;
+    const {title, text} = req.body;
 
     // If notes are present, store in an object
-    if(notes) {
+    if(title && text) {
         const newNote = {
             title, 
             text
