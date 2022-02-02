@@ -32,20 +32,32 @@ app.post('/api/notes', (req, res) => {
     // If notes are present, store in an object
     if(notes) {
         const newNote = {
-            notes
+            title, 
+            text
         }
+
+        // convert data into a string
+        const stringNote = JSON.stringify(newNote);
+
+        // write string into a file
+        fs.writeFile('/db/db.json', stringNote, (error) => {
+            if (error) {
+                console.error(error);
+            }
+            else {
+                console.log(`Note for ${newNote.title} has been written in the JSON file`);
+            }
+        });
+
+        const response = {
+            status: 'Success!',
+            body: newNote
+        }
+
+        console.log(response);
+        res.json(response);
     }
-
-    // convert data into a string
-    const stringNote = JSON.stringify(newNote);
-
-    // write string into a file
-    fs.writeFile('/db/db.json', stringNote, (error) => {
-        if (error) {
-            console.error(error);
-        }
-        else {
-            console.log(`Note for ${stringNote} has been written in the JSON file`);
-        }
-    });
+    else {
+        res.json('Error in posting note');
+    }
 });
