@@ -13,13 +13,13 @@ app.use(express.static('public'));
 
 // __dirname indicates absolute path
 app.get('/', (req, res) => {
-    res.sendFile(__dirname, '/public/index.html');
+    res.sendFile(path.join(__dirname, '/public/notes.html'));
 });
 
 // GET request for notes
 app.get('/api/notes', (req, res) => {
     // send message to client
-    res.json(`${res.method} request received to get a single note`);
+    res.json(`${req.method} request received to get a single note`);
 
     // Log request to the terminal
     console.info(`${req.method} request received to get notes`);
@@ -44,7 +44,7 @@ app.get('/api/notes/:notes_id', (req, res) => {
 // POST request to add notes
 app.post('/api/notes', (req, res) => {
     //Log that post was received
-    console.info(`${res.method} request received to add a new note`);
+    console.info(`${req.method} request received to add a new note`);
 
     //create parameter to store notes
     const {title, text} = req.body;
@@ -80,4 +80,8 @@ app.post('/api/notes', (req, res) => {
     else {
         res.json('Error in posting note');
     }
+});
+
+app.listen(PORT, () => {
+    console.log(`App listening at http://localhost:${PORT}`);
 });
