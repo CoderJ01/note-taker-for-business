@@ -6,7 +6,7 @@ const {
     validateNote
 
 } = require('../../lib/notes');
-const { notes } = require('../../db/db');
+let { notes } = require('../../db/db');
 
 router.get('/notes', (req, res) => {
     let results = notes;
@@ -34,8 +34,19 @@ router.post('/notes', (req, res) => {
     }
     else {
         const note = createNewNote(req.body, notes);
-        console.log(note);
         res.json(note);
+    }
+});
+
+router.delete('/notes/:id', (req, res) => {
+    const { id } = req.params;
+
+    const deleted = notes.filter(note => note.id === id);
+    if (deleted) {
+        notes = notes.filter(note => note.id !== id);
+    }
+    else {
+        res.status(404).json.apply({ message: "Note you are looking for does not exist"});
     }
 });
 
