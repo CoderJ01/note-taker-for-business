@@ -44,7 +44,6 @@ router.delete('/notes/:id', (req, res) => {
     const deleted = notes.filter(note => note.id === id);
     if (deleted) {
         notes = notes.filter(note => note.id !== id);
-        location.reload();
     }
     else {
         res.status(404).json.apply({ message: "Note you are looking for does not exist"});

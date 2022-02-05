@@ -1,29 +1,19 @@
 {
   "notes": [
     {
-      "title": "12344",
-      "text": "12233444",
+      "title": "Resumes",
+      "text": "Look at the resumes your assistant sent to you. ",
       "id": "0"
     },
     {
-      "title": "1",
-      "text": "1",
+      "title": "Keys",
+      "text": "Give new cashier the keys to the building.",
       "id": "1"
     },
     {
-      "title": "1",
-      "text": "2",
+      "title": "Interviews",
+      "text": "Meet the candidates with best resumes.",
       "id": "2"
-    },
-    {
-      "title": "2",
-      "text": "2",
-      "id": "3"
-    },
-    {
-      "title": "3",
-      "text": "3",
-      "id": "4"
     }
   ]
 }
