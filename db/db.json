@@ -1,19 +1,9 @@
 {
   "notes": [
     {
-      "title": "Resumes",
-      "text": "Look at the resumes your assistant sent to you. ",
+      "title": "McDonald's",
+      "text": "McDouble ",
       "id": "0"
-    },
-    {
-      "title": "Keys",
-      "text": "Give new cashier the keys to the building.",
-      "id": "1"
-    },
-    {
-      "title": "Interviews",
-      "text": "Meet the candidates with best resumes.",
-      "id": "2"
     }
   ]
 }
