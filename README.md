@@ -20,6 +20,7 @@ This note taker is designed for small business managers. The owner of the busine
     * npm start
  * click here: http://localhost:3001/notes
  * use the note taker
+ * [Note Taker](./Develop/public/index.html)
 
 ## Contribution
 Made by CoderJ01
