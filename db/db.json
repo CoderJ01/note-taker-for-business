@@ -1,9 +1,39 @@
 {
   "notes": [
     {
-      "title": "McDonald's",
-      "text": "McDouble ",
+      "title": "A",
+      "text": "A",
       "id": "0"
+    },
+    {
+      "title": "B",
+      "text": "B",
+      "id": "1"
+    },
+    {
+      "title": "C",
+      "text": "C",
+      "id": "2"
+    },
+    {
+      "title": "D",
+      "text": "D",
+      "id": "3"
+    },
+    {
+      "title": "E",
+      "text": "E",
+      "id": "4"
+    },
+    {
+      "title": "F",
+      "text": "F",
+      "id": "5"
+    },
+    {
+      "title": "G",
+      "text": "G",
+      "id": "6"
     }
   ]
 }
