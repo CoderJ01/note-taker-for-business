@@ -48,17 +48,26 @@ router.post('/notes', (req, res) => {
 // then notes will reappaer when the system is restarted (via 'npm start')
 // This bizarre issue shall be fixed soon
 router.delete('/notes/:id', (req, res) => {
-    const { id } = req.params;
+    // const { id } = req.params;
 
-    const deleted = notes.find(note => note.id === id);
-    if (deleted) {
-        notes = notes.filter(note => note.id !== id);
-        res.json(deleted);
-        res.status(200).json(deleted);
+    // const deleted = notes.find(note => note.id === id);
+    // if (deleted) {
+    //     notes = notes.filter(note => note.id !== id);
+    //     res.json(deleted);
+    //     res.status(200).json(deleted);
+    // }
+    // else {
+    //     res.status(404).json.apply({ message: "Note you are looking for does not exist"});
+    // }
+
+    const userNote = findById(req.params.id, notes);
+
+    if (userNote === -1) {
+        return res.status(404).json({});
     }
-    else {
-        res.status(404).json.apply({ message: "Note you are looking for does not exist"});
-    }
+
+    notes.splice(userNote, 1);
+    res.json();
 });
 
 module.exports = router;
