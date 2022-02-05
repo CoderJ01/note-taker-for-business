@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
+// filter the results
 var filterByQuery = (query, notes) => {
     let filteredResults = notes;
 
@@ -15,11 +16,13 @@ var filterByQuery = (query, notes) => {
     return filteredResults;
 }
 
+// create a unique id for each note
 var findById = (id, notes) => {
     const result = notes.filter(note => note.id === id)[0];
     return result;
 }
 
+// create a new note
 var createNewNote = (body, notes) => {
     const note = body;
     notes.push(note);
@@ -30,6 +33,8 @@ var createNewNote = (body, notes) => {
     return note;
 }
 
+// validate the title and text of each note
+// save button will not appear unless user puts both title and name
 var validateNote = (note) => {
     if (!note.title || typeof note.title !== "string") {
         return false;

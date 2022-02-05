@@ -8,6 +8,7 @@ const {
 } = require('../../lib/notes');
 let { notes } = require('../../db/db');
 
+// send a request to get the notes
 router.get('/notes', (req, res) => {
     let results = notes;
     if (req.body) {
@@ -16,6 +17,7 @@ router.get('/notes', (req, res) => {
     res.json(results);
 });
 
+// send a request to look for the notes by id
 router.get('/notes/:id', (req, res) => {
     const result = findById(req.params.id, notes);
     if (result) {
@@ -26,6 +28,7 @@ router.get('/notes/:id', (req, res) => {
     }
 });
 
+// send a request to create a new note if validation is confirmed
 router.post('/notes', (req, res) => {
     req.body.id = notes.length.toString();
 
@@ -38,6 +41,12 @@ router.post('/notes', (req, res) => {
     }
 });
 
+// delete the note
+// DISCLAIMER: In order for the notes to delete, another one must be add afterwards for the deleted
+// ones to stay gone
+// if user does not add a note right after deleting the unwanted note,
+// then notes will reappaer when the system is restarted (via 'npm start')
+// This bizarre issue shall be fixed soon
 router.delete('/notes/:id', (req, res) => {
     const { id } = req.params;
 
