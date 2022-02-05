@@ -45,11 +45,6 @@ router.post('/notes', (req, res) => {
 });
 
 // delete the note
-// DISCLAIMER: In order for the notes to delete, another one must be add afterwards for the deleted
-// ones to stay gone
-// if user does not add a note right after deleting the unwanted note,
-// then notes will reappaer when the system is restarted (via 'npm start')
-// This bizarre issue shall be fixed soon
 router.delete('/notes/:id', (req, res) => {
     const { id } = req.params;
 
@@ -65,8 +60,6 @@ router.delete('/notes/:id', (req, res) => {
     else {
         res.status(404).json.apply({ message: "Note you are looking for does not exist"});
     }
-    console.log(deleted);
-    console.log(notes);
 });
 
 module.exports = router;
