@@ -15,7 +15,7 @@ This note taker is designed for small business managers. The owner of the busine
    * npm install express
 
 ## Website Link
-https://note-taker-for-business.herokuapp.com/notes
+https://note-taker-for-business.herokuapp.com/
 
 ## Contribution
 Made by CoderJ01
