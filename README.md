@@ -10,16 +10,12 @@ This note taker is designed for small business managers. The owner of the busine
 ## Screenshot
 ![Alt text](./assets/images/image-screenshot.JPG?raw=true "Note Taker")
 
-## Link
- * clone the repository
- * go the the directory inn terminal
- * install packages
-    * npm install
-    * npm install express
- * run the application
-    * npm start
- * click here: http://localhost:3001/notes
- * use the note taker
+## Package Requirements
+   * npm install
+   * npm install express
+
+## Website Link
+https://note-taker-for-business.herokuapp.com/notes
 
 ## Contribution
 Made by CoderJ01
