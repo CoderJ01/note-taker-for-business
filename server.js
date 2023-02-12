@@ -15,7 +15,7 @@ app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
 app.get('/', (req, res) => {
-    res.sendFile('/index.html', {root: path.join(__dirname, 'public')});
+    res.sendFile('index.html', {root: path.join(__dirname, 'public')});
 })
 
 app.listen(PORT, () => {
