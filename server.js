@@ -19,6 +19,10 @@ app.get('/', (req, res) => {
     res.sendFile('index.html', {root: path.join(__dirname, 'public')});
 })
 
+app.get('/notes', (req, res) => {
+    res.sendFile('notes.html', {root: path.join(__dirname, 'public')});
+})
+
 app.listen(PORT, () => {
     console.log(`API server is now on localhost:${PORT}`);
 })
